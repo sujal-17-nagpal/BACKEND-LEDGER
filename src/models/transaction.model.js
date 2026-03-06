@@ -19,7 +19,7 @@ const transactionSchema = new mongoose.Schema({
             values:["pending , complete , failed,reversed"],
             message:"transaction can be pending , complete , failed or reverse"
         },
-        default:pending
+        default:"pending"
     },
     amount:{
         type:Number,
