@@ -17,7 +17,7 @@ const transactionSchema = new mongoose.Schema({
         type:String,
         enum : {
             values:["pending" , "complete" , "failed","reversed"],
-            message:"transaction can be pending , complete , failed or reverse"
+            message:"transaction can be pending , complete , failed or reversed"
         },
         default:"pending"
     },
