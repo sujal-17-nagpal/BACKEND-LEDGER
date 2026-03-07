@@ -33,7 +33,7 @@ const isSystemUserAuth = async(req,res,next)=>{
         const decoded = jwt.verify(token,process.env.JWT_SECRET)
 
         const user = await userModel.findById(decoded.userId).select("+systemUser")
-
+        console.log(user)
         if(!user.systemUser){
             return res.status(403).json({message : "Unauthorized"})
         }

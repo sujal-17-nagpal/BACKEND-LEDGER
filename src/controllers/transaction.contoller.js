@@ -43,7 +43,7 @@ const createInitialFundsTransaction = async(req,res)=>{
     const session = await mongoose.startSession()
     session.startTransaction()
 
-    const transaction = new  transactionModel({
+    const transaction = new transactionModel({
         fromAccount : fromAccount._id,
         toAccount,
         status : "pending",
