@@ -13,4 +13,15 @@ const createAccount = async(req,res)=>{
     })
 }
 
-module.exports = {createAccount}
+const getUserAccounts = async(req,res)=>{
+    const user = req.user
+
+    const allAccounts = await accountModel.find({user : user._id})
+
+    res.json(200).json({
+        message : "accounts fetched successfulyy",
+        allAccounts
+    })
+}
+
+module.exports = {createAccount,getUserAccounts}
